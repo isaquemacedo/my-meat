@@ -1,1 +1,2 @@
-# my-meat
+Repositório criado para a aplicação criada no curso 'Construindo Aplicações Web Com o Novo Angular (4, 5 e 6)', do arquiteto de software Tarso Bessa. Link do repositório oficial:
+https://github.com/cod3rcursos/meat-app-starter
