@@ -1,0 +1,11 @@
+<form #form="ngForm" novalidate>
+  <i *ngFor="let r of rates" name="rating" class="fa" [class.fa-star]="r <= rate" [class.fa-star-o]="r > rate" (click)="setRate(r)" (mouseenter)="setTemporaryRate(r)"
+    (mouseleave)="clearTemporaryRate()"></i>
+  <br>
+  <textarea name="comments" id="comments"></textarea>
+</form>
+
+<br>
+<button class="btn btn-success pull-right">
+  <i class="fa fa-star"></i> Avaliar
+</button>
