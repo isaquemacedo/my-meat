@@ -16,23 +16,24 @@
       <div class="row">
         <div class="col-xs-12">
           <p class="lead">Seus Dados:</p>
-          <div class="col-sm-6 col-xs-12">
-            <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-              <input class="form-control" type="text" formControlName="name" placeholder="Endereço" autocomplete="off">
-            </mt-input-container>
-          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+            <input class="form-control" type="text" formControlName="name" placeholder="Nome" autocomplete="off">
+          </mt-input-container>
+        </div>
 
-          <div class="col-sm-6 col-xs-12">
-            <mt-input-container errorMessage="E-mail inválido" label="E-mail">
-              <input class="form-control" type="text" formControlName="email" placeholder="E-mail" autocomplete="off">
-            </mt-input-container>
-          </div>
+        <div class="col-sm-3 col-xs-12">
+          <mt-input-container errorMessage="E-mail inválido" label="E-mail">
+            <input class="form-control" type="text" formControlName="email" placeholder="E-mail" autocomplete="off">
+          </mt-input-container>
+        </div>
 
-          <div class="col-sm-6 col-xs-12">
-            <mt-input-container errorMessage="E-mail inválido" label="E-mail">
-              <input class="form-control" type="text" formControlName="emailConfirmation" placeholder="Confirmação E-mail" autocomplete="off">
-            </mt-input-container>
-          </div>
+        <div class="col-sm-3 col-xs-12">
+          <mt-input-container errorMessage="E-mail inválido" label="E-mail">
+            <input class="form-control" type="text" formControlName="emailConfirmation" placeholder="Confirmação E-mail"
+              autocomplete="off">
+          </mt-input-container>
         </div>
       </div>
 
@@ -65,7 +66,8 @@
           <p class="lead">Itens do Pedido:</p>
         </div>
 
-        <mt-order-items [items]="cardItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (remove)="remove($event)"></mt-order-items>
+        <mt-order-items [items]="cardItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)"
+          (remove)="remove($event)"></mt-order-items>
 
         <!-- /.col -->
       </div>
@@ -94,6 +96,8 @@
 
     <div class="row">
       <div class="col-xs-12">
+        {{orderForm.valid}}
+        {{cardItems().length}}
         <button (click)="checkOrder(orderForm.value)" [disabled]="!orderForm.valid || cardItems().length <= 0" class="btn btn-success pull-right">
           <i class="fa fa-credit-card"></i> Concluir Pedido
         </button>
